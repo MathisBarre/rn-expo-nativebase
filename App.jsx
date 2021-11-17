@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NativeBaseProvider, Text, Box, FlatList, HStack, Divider } from 'native-base';
+import theme from "./src/theme"
 
 export default function App() {
 
@@ -103,12 +104,11 @@ export default function App() {
     }
   ]
   
-
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={theme}>
       <Box my="16">
         <Text fontSize="lg" textAlign="center">Total Balance</Text>
-        <Text fontSize="5xl" textAlign="center">2 901,12€</Text>
+        <Text fontSize="5xl" textAlign="center" fontFamily="heading">2901,12€</Text>
       </Box>
       <Box mx="6" mb="6" borderColor="gray.300" borderWidth="1" borderRadius="lg">
         <FlatList data={transactions} renderItem={({item, index}) => {
