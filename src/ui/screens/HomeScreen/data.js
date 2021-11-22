@@ -1,4 +1,12 @@
-export default [
+export default {
+  balance: {
+    value: 2901.12,
+    currency: {
+      symbol: "€",
+      name: "euro"
+    }
+  },
+  transactions: [
   {
     title: "Pokawa",
     date: {
@@ -95,4 +103,5 @@ export default [
       sign: "-",
     },
   },
-];
+]
+}

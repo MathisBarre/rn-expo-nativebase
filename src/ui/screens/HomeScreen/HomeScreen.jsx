@@ -1,6 +1,6 @@
 import React from "react"
 import { Text, Box, FlatList, HStack, Divider } from 'native-base';
-import transactions from "./data"
+import data from "./data"
 
 export default function HomeScreen() {
   return (
@@ -10,7 +10,7 @@ export default function HomeScreen() {
           Total Balance
         </Text>
         <Text fontSize="5xl" textAlign="center" fontFamily="heading">
-          2901,12€
+          {data.balance.value}{data.balance.currency.symbol}
         </Text>
       </Box>
       <Box
@@ -21,7 +21,7 @@ export default function HomeScreen() {
         borderRadius="lg"
       >
         <FlatList
-          data={transactions}
+          data={data.transactions}
           renderItem={({ item, index }) => {
             return (
               <>
@@ -41,7 +41,7 @@ export default function HomeScreen() {
                     </Text>
                   </Box>
                 </HStack>
-                {index !== transactions.length - 1 && <Divider />}
+                {index !== data.transactions.length - 1 && <Divider />}
               </>
             );
           }}
